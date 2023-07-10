@@ -13,6 +13,14 @@
 </head>
 
 <body>
+  <script>
+    if ('vibrate' in navigator) {
+      navigator.vibration.vibrate(1000);
+      console.log('vibra');
+    } else {
+      // Vibración no compatible
+    }
+  </script>
   <memory-card></memory-card>
 
   <script type="module" src="./src/memory-card.js"></script>
