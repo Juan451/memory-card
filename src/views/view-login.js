@@ -123,8 +123,8 @@ render() {
   login() {
     const usernameInput = this.shadowRoot.getElementById('usernameInput').value;
 
-    if (usernameInput.length < 2 || !/^[a-zA-Z]+$/.test(usernameInput)) {
-      this.inputError = true; // Activar el mensaje de error y el estilo del input
+    if (usernameInput.length < 3) {
+      this.inputError = true;
       return;
     }
 
