@@ -1,21 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="Put your description here." />
+    <base href="/" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Put your description here.">
-  <base href="/">
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js", {
+            scope: "/",
+          });
+        });
+      }
+    </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Memory Card Game</title>
-</head>
+    <title>Memory Card Game</title>
+  </head>
 
-<body>
-  <memory-card></memory-card>
+  <body>
+    <memory-card></memory-card>
 
-  <script type="module" src="./src/memory-card.js"></script>
-</body>
-
+    <script type="module" src="./src/memory-card.js"></script>
+  </body>
 </html>
