@@ -52,9 +52,26 @@ export class ViewCard extends PageViewElement {
       gap: 8px;
     }
 
+    .level-label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
     .level-select {
       padding: 6px;
       font-size: 14px;
+    }
+
+    /* Estilos responsivos para dispositivos móviles */
+    @media (max-width: 600px) {
+      .level-select-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .level-select {
+        margin-top: 8px;
+      }
     }
 
     .new-game {
@@ -187,6 +204,7 @@ export class ViewCard extends PageViewElement {
           <span>${this.username.username}</span>
         </div>
         <div class="level-select-wrapper">
+          <span class="level-label">Level</span>
           <select class="level-select" @change=${this.onLevelSelectChange}>
             <option value="easy" ?selected=${this.selectedLevel === "easy"}>
               Easy
@@ -330,13 +348,15 @@ export class ViewCard extends PageViewElement {
     if (!this.showNumbers && !this.gameStarted && !this.isClicked(index)) {
       this.clickedCardIndex = index;
       const cardValue = this.cards[index];
-      const cardElement = this.shadowRoot.querySelector(`.card:nth-child(${index + 1})`);
-  
+      const cardElement = this.shadowRoot.querySelector(
+        `.card:nth-child(${index + 1})`
+      );
+
       if (cardValue === this.targetNumber) {
         cardElement.classList.add("correct-answer");
         this.cardColors[index] = "correct-answer";
         navigator.vibrate(1000);
-  
+
         let points;
         if (this.selectedLevel === "easy") {
           points = 10;
@@ -345,27 +365,26 @@ export class ViewCard extends PageViewElement {
         } else if (this.selectedLevel === "difficult") {
           points = 30;
         }
-  
+
         this.score += points;
-  
+
         setTimeout(() => {
           this.startNewGame();
         }, 1000);
       } else {
         cardElement.classList.add("wrong-answer");
         this.cardColors[index] = "wrong-answer";
-  
+
         setTimeout(() => {
           this.resetCardColors();
           this.startNewGame();
           navigator.vibrate(0);
         }, 1000);
       }
-  
+
       this.disableAllCards();
     }
   }
-  
 
   disableAllCards() {
     const cardElements = this.shadowRoot.querySelectorAll(".card");
