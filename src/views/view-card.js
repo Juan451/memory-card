@@ -204,7 +204,7 @@ export class ViewCard extends PageViewElement {
           <span>${this.username.username}</span>
         </div>
         <div class="level-select-wrapper">
-          <span class="level-label">Level</span>
+        <span class="level-label">Level</span>
           <select class="level-select" @change=${this.onLevelSelectChange}>
             <option value="easy" ?selected=${this.selectedLevel === "easy"}>
               Easy
