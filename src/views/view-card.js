@@ -355,8 +355,6 @@ export class ViewCard extends PageViewElement {
       if (cardValue === this.targetNumber) {
         cardElement.classList.add("correct-answer");
         this.cardColors[index] = "correct-answer";
-        navigator.vibrate(1000);
-
         let points;
         if (this.selectedLevel === "easy") {
           points = 10;
@@ -374,11 +372,10 @@ export class ViewCard extends PageViewElement {
       } else {
         cardElement.classList.add("wrong-answer");
         this.cardColors[index] = "wrong-answer";
-
+        window.navigator.vibrate(1000);
         setTimeout(() => {
           this.resetCardColors();
           this.startNewGame();
-          navigator.vibrate(0);
         }, 1000);
       }
 
