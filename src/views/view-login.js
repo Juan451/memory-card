@@ -103,6 +103,7 @@ render() {
       <input
         id="usernameInput"
         type="text"
+        data-testid="elInput"
         name="inputName"
         class="login-input ${this.inputError ? 'error' : ''}"
         placeholder="Name"

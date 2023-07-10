@@ -14,12 +14,16 @@
     "start": "web-dev-server --app-index index.html --node-resolve --open --watch"
   },
   "dependencies": {
+    "cucumber": "^6.0.7",
+    "cucumber-html-reporter": "^7.1.1",
     "lit": "^2.0.2",
     "pwa-helpers": "^0.9.1",
+    "require": "^2.4.20",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
+    "@cucumber/cucumber": "^9.2.0",
     "@custom-elements-manifest/analyzer": "^0.4.17",
     "@open-wc/building-rollup": "^2.0.2",
     "@open-wc/testing": "^3.1.6",
@@ -30,12 +34,14 @@
     "@web/rollup-plugin-import-meta-assets": "^1.0.7",
     "@web/test-runner": "^0.14.0",
     "babel-plugin-template-html-minifier": "^4.1.0",
+    "chai": "^4.3.7",
     "deepmerge": "^4.2.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-cpy": "^2.0.1",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-workbox": "^6.2.0",
+    "selenium-webdriver": "^4.10.0",
     "workbox-cli": "^7.0.0"
   },
   "customElements": "custom-elements.json",
