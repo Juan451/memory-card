@@ -47,7 +47,6 @@ export class ViewCard extends PageViewElement {
     }
 
     .level-select-wrapper {
-      align-items: center;
       gap: 8px;
     }
 
