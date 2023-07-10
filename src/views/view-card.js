@@ -47,7 +47,6 @@ export class ViewCard extends PageViewElement {
     }
 
     .level-select-wrapper {
-      display: flex;
       align-items: center;
       gap: 8px;
     }
@@ -65,8 +64,7 @@ export class ViewCard extends PageViewElement {
     /* Estilos responsivos para dispositivos móviles */
     @media (max-width: 600px) {
       .level-select-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
       }
 
       .level-select {
