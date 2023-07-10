@@ -35,7 +35,8 @@
     "rollup": "^2.60.0",
     "rollup-plugin-cpy": "^2.0.1",
     "rollup-plugin-esbuild": "^5.0.0",
-    "rollup-plugin-workbox": "^6.2.0"
+    "rollup-plugin-workbox": "^6.2.0",
+    "workbox-cli": "^7.0.0"
   },
   "customElements": "custom-elements.json",
   "main": "rollup.config.js",
