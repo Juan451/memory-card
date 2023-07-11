@@ -246,7 +246,7 @@ export class ViewCard extends PageViewElement {
               </p>
             </div>
             <div class="timer ${this.gameStarted ? "" : "hide"}">
-              Tiempo restante: ${this.timer} segundos
+              Time left: ${this.timer} seconds
             </div>
           `}
 

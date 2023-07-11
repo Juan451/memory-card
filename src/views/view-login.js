@@ -27,8 +27,8 @@ export class ViewLogin extends PageViewElement {
 
     .mouse {
       display: flex;
-      justify-content: center; /* Centra horizontalmente */
-      align-items: center; /* Centra verticalmente */
+      justify-content: center;
+      align-items: center;
     }
 
 
@@ -83,15 +83,12 @@ export class ViewLogin extends PageViewElement {
 
   connectedCallback() {
   super.connectedCallback();
-  
-  // Agregar un evento al evento "popstate" del navegador
     // eslint-disable-next-line wc/require-listener-teardown
     window.addEventListener('popstate', this.handlePopState.bind(this));
   }
 
   // eslint-disable-next-line class-methods-use-this
   handlePopState() {
-    // Borrar el token del almacenamiento local
     localStorage.removeItem('token');
   }
 
@@ -110,15 +107,15 @@ render() {
         @focus="${this.handleInputFocus}"
       />
       ${this.inputError ? html`
-        <p class="error-message">El nombre requiere mínimo 2 letras</p>
+        <p class="error-message">The name requires minimum two letters</p>
       ` : ''}
-      <button @click="${this.login}" class="login-button">Acceder</button>
+      <button @click="${this.login}" class="login-button">Join</button>
     </div>
   `;
 }
 
   handleInputFocus() {
-    this.inputError = false; // Restablecer la propiedad inputError
+    this.inputError = false;
   }
 
   login() {
@@ -129,12 +126,8 @@ render() {
       return;
     }
 
-    // Generar un token único
     const token = uuidv4();
 
-    // Asociar el token al usuario en la base de datos
-
-    // Enviar el token al cliente
     this.dispatchEvent(
       new CustomEvent('username-login', {
         composed: true,
@@ -146,17 +139,13 @@ render() {
       })
     );
 
-    // Guardar el token en el almacenamiento local del cliente
     localStorage.setItem('token', token);
 
-    // Verificar si el token es válido
     const isValid = isValidToken(token);
 
     if (isValid) {
-      // Navegar al siguiente componente
       this.dispatchEvent(new CustomEvent('navigate', { detail: '/view-card' }));
     } else {
-      // Mostrar mensaje de error o realizar otra acción apropiada
       console.log('Token inválido');
     }
 
