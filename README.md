@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
+  <img width="200" src="[https://open-wc.org/hero.png](https://img.favpng.com/11/16/9/bbva-los-molinos-logo-brand-product-png-favpng-NX5S8uz0qhKnVZjUAW3VVupxY.jpg)"></img>
 </p>
 
 ## Open-wc Starter App
