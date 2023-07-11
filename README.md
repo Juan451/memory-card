@@ -71,7 +71,8 @@ Normalmente para realizar despliegues en la aplicacion se usa Jenkins o AzureDev
 
 Memory card desplegado:
 
-<https://www.desarrolloweb.com>
+<https://memory-card-juan.netlify.app/>
+
 
 ## Scripts
 
