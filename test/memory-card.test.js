@@ -1,21 +1,43 @@
-import { html } from 'lit';
-import { fixture, expect } from '@open-wc/testing';
+import { html, fixture, expect } from "@open-wc/testing";
 
 import '../src/memory-card.js';
 
 describe('MemoryCard', () => {
   let element;
+
   beforeEach(async () => {
     element = await fixture(html`<memory-card></memory-card>`);
   });
 
-  it('renders a h1', () => {
-    const h1 = element.shadowRoot.querySelector('h1');
-    expect(h1).to.exist;
-    expect(h1.textContent).to.equal('My app');
+  it('renders a view-login component', () => {
+    const viewLogin = element.shadowRoot.querySelector('view-login');
+    expect(viewLogin).to.exist;
+  });
+
+  it('simulates a click on the view-login button', async () => {
+    const loginComponent = element.shadowRoot.querySelector('view-login');
+    const usernameInput = loginComponent.shadowRoot.querySelector('input');
+    usernameInput.value = 'fernando';
+    loginComponent.shadowRoot.querySelector('button').click();
+
   });
 
   it('passes the a11y audit', async () => {
-    await expect(element).shadowDom.to.be.accessible();
+    const viewCard = element.shadowRoot.querySelector('view-card');
+    expect(viewCard).to.exist;
+    await expect(element).to.be.accessible();
+  });
+
+
+  it('waits for 2.5 seconds and clicks on a card', async () => {
+    const viewCard = element.shadowRoot.querySelector('view-card');
+    viewCard.shadowRoot.querySelector('select.level-select option[value="difficult"]').click();
+    viewCard.shadowRoot.querySelector('button').click();
+    let cardElement = viewCard.shadowRoot.querySelector('div.card-container');
+
+    setTimeout(() => {
+      cardElement.click();
+      done();
+    }, 2500);
   });
 });

@@ -201,8 +201,13 @@ export class ViewCard extends PageViewElement {
           <span>${this.username.username}</span>
         </div>
         <div class="level-select-wrapper">
-        <span class="level-label">Level</span>
-          <select class="level-select" @change=${this.onLevelSelectChange}>
+          <span class="level-label">Level</span>
+          <select
+            class="level-select"
+            name="selector"
+            @change=${this.onLevelSelectChange}
+            aria-label="Select level"
+          >
             <option value="easy" ?selected=${this.selectedLevel === "easy"}>
               Easy
             </option>
@@ -249,6 +254,7 @@ export class ViewCard extends PageViewElement {
         ${this.cards.map(
           (card, index) => html`
             <div
+              name="cards"
               class="card ${this.gameStarted
                 ? "disabled"
                 : ""} ${this.isClicked(index)
