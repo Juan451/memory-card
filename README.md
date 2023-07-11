@@ -6,13 +6,25 @@
 
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
 
-## Quickstart
+## Descripcion
 
-To get started:
+En este proyecto llamado Memory Card, lo he montado sobre open-wc que es conjunto de herramientas para facilitar el desarrollo de aplicaciones web con estándares web abiertos que incluye Lit, que es una libreria basada en web componentes y es la evolución de LitElement.
+
+1. Primer paso a considerar.
+Instalamos nuestras dependencias usando nuestro administrador de paquetes, recuerda que debe de ser superior a la version 10 y la version de node
+a la version 10, vienen en el mismo instalador.
+
+Nos situamos en el paquete donde hemos clonado nuestro proyecto e instalamos las dependencias.
+Ir al paquete:
 
 ```bash
-npm init @open-wc
-# requires node 10 & npm 6 or higher
+cd memory-card
+```
+
+Instalar dependencias:
+
+```bash
+npm install
 ```
 
 ## Scripts
