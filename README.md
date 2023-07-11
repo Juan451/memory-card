@@ -27,6 +27,19 @@ Instalar dependencias:
 npm install
 ```
 
+2. Segundo paso.
+Arrancamos el proyecto, nuestro proyecto para arrancarlo necesitamos un comando llamado `npm run start` que esta en nuestro **package.json**
+que estan nuestros scripts de arranque de proyecto, construccion de proyecto y testeos, aunque he puesto otro framework de testeo llamado `test-cucumber` y tambien he usado el recomendado por Lit que es Esto es un [web test runner](https://lit.dev/docs/tools/testing/) ya que recordemos que Lit esta en desarrollo y puede que tengamos problemas a la hora de configuracion de librerias externas.
+
+Arrancamos proyecto:
+
+```bash
+npm run start
+```
+
+3. Tercer paso.
+Ahora en nuestro proyecto ingresamos el nombre, ese nombre nos genera un token, lo he puesto para no saltar de una vista a otra, por ejemplo no escribir una ruta en tu navegador e ir directamente hacia la vista del juego, en la vista card seleccionamos nuestra dificultad y le damos al boton > Este párrafo será una cita y en HTML se mostrará con la etiqueta <button>.
+
 ## Scripts
 
 - `start` runs your app for development, reloading on file changes
