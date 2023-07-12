@@ -148,13 +148,13 @@ export class ViewCard extends PageViewElement {
 
     @media (max-width: 600px) {
       .card-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     @media (max-width: 410px) {
       .card-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 8px;
       }
     }
