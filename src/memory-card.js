@@ -52,7 +52,7 @@ export class MemoryCard extends LitElement {
       text-align: left;
       width: 100%;
       max-width: 400px;
-      margin-top: -10rem; /* Ajusta el valor según sea necesario */
+      margin-top: -10rem;
     }
 
     .container {
@@ -120,7 +120,6 @@ export class MemoryCard extends LitElement {
     const isValid = token && isValidToken(token);
 
     if (decodedPath === '/view-card' && !isValid) {
-      // Redirigir al usuario a la página de inicio de sesión
       window.location.href = '/';
       return;
     }
@@ -128,7 +127,6 @@ export class MemoryCard extends LitElement {
     this.page = decodedPath === '/view-card' ? 'card' : 'login';
     this.hideLogin = this.page === 'card';
 
-    // Actualizar el estado de inicialización
     this.initialized = true;
   }
 
